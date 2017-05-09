@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
         <!DOCTYPE html>
@@ -6,8 +6,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
     <title>BeerBrewery</title>
@@ -29,7 +27,7 @@
             etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
         <p>
             <a href="#" class="btn btn-primary">Reservation for degustation</a>
-            <a href="#" class="btn btn-secondary"><span class="glyphicons glyphicons-beer"></span> Beer Menu</a>
+            <a href="#" class="btn btn-secondary">Beer Menu</a>
         </p>
     </div>
 </section>

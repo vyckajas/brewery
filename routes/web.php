@@ -19,10 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+//Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('manufacturers', 'ManufacturersController');
     Route::resource('products', 'ProductsController');
-});
+//});
 
 // OAuth Routes
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
