@@ -83,11 +83,13 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="http://brewery.dev/admin/manufacturers">Manufacturers</a>
+                    <a href="http://brewery.dev/admin/products">Products</a>
+                    @can('create', \App\Manufacturer::class)
+                        <a href="#">Reservation for degustation</a>
+                    @endcan
+                    <a href="#">Menu</a>
+                    <a href="#">Contact Us</a>
                 </div>
             </div>
         </div>
