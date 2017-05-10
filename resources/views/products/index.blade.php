@@ -6,7 +6,10 @@
         <div class="container">
             <div class="row">
                 <h1 style="vertical-align: middle; display: inline-block; margin-top: 40px">All Assortment</h1>
-                <a style="vertical-align: text-top; margin-left: 20px; margin-top: 2px" href="{{ route('products.create') }}" class="btn btn-default">Add New Product</a>
+                @can('create', \App\Manufacturer::class)
+                    <a style="vertical-align: text-top; margin-left: 20px; margin-top: 2px"
+                       href="{{ route('products.create') }}" class="btn btn-default">Add New Product</a>
+                @endcan
             </div>
             <div class="row">
                 @forelse($products as $product)
@@ -32,11 +35,11 @@
                         @endcan
                     </div>
                 @empty
-                        <p colspan="3">No entries found.</p>
+                    <p colspan="3">No entries found.</p>
                 @endforelse
             </div>
+            {{ $products->links() }}
         </div>
     </div>
-    {{ $products->links() }}
 
 @endsection

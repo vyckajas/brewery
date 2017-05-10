@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2 gapFromNav">
                 @can('create', \App\Manufacturer::class)
                     <a href="{{ route('manufacturers.create') }}" class="btn btn-default gap">Add New Manufacturer</a>
                 @endcan

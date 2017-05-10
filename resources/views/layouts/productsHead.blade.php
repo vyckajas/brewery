@@ -7,8 +7,7 @@
 
     <title>BeerBrewery</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Custom styles for this template -->
     <link href="css/assortment.css" rel="stylesheet">
