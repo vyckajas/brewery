@@ -76,7 +76,7 @@ class ManufacturersController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreManufacturerRequest $request, $id)
     {
         $this->authorize('update', Manufacturer::class);
         $manufacturer = Manufacturer::findOrFail($id);

@@ -11,6 +11,9 @@
                        href="{{ route('products.create') }}" class="btn btn-default">Add New Product</a>
                 @endcan
             </div>
+            @if (session('message'))
+                <div class="alert alert-info">{{ session('message') }}</div>
+            @endif
             <div class="row">
                 @forelse($products as $product)
                     <div class="product">

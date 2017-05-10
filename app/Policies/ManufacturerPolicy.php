@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Product;
 use App\User;
 use App\Manufacturer;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -28,7 +29,7 @@ class ManufacturerPolicy
      * @param  \App\Manufacturer  $manufacturer
      * @return mixed
      */
-    public function update(User $user, Manufacturer $manufacturer)
+    public function update(User $user)
     {
         return $user->role == 'admin';
     }
@@ -40,7 +41,7 @@ class ManufacturerPolicy
      * @param  \App\Manufacturer  $manufacturer
      * @return mixed
      */
-    public function delete(User $user, Manufacturer $manufacturer)
+    public function delete(User $user)
     {
         return $user->role == 'admin';
     }
