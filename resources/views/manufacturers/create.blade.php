@@ -19,16 +19,21 @@
 
                         <form action="{{ route('manufacturers.store') }}" method="post">
                             {{ csrf_field() }}
-                            Name:
-                            <br/>
-                            <input type="text" name="name" value="{{ old('name') }}" required/>
-                            <br/><br/>
-                            Description:
-                            <br/>
-                            <textarea name="description" required
-                                      style="margin: 0px; width: 353px; height: 50px;">{{ old('description') }}</textarea>
-                            {{--<input type="text" name="last_name" value="{{ old('last_name') }}" />--}}
-                            <br/><br/>
+                            <div class="form-group">
+
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Manufacturer name"
+                                       name="name" value="{{ old('name') }}" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description:</label>
+
+                                <textarea name="description" class="form-control" id="description"
+                                          placeholder="Manufacturer description" required
+                                          style="margin: 0px; width: 100%; height: 50px;">{{ old('description') }}</textarea>
+
+                            </div>
                             <input type="submit" value='Submit' class="btn btn-primary"/>
                         </form>
                     </div>

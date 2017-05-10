@@ -21,9 +21,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('manufacturers', 'ManufacturersController');
-    Route::resource('products', 'ProductsController');
+    Route::resource('products', 'ProductController');
+
 //});
 
 // OAuth Routes
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+Route::get('create', function () {
+    return view('products.create');
+});
+
