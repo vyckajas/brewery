@@ -20,9 +20,19 @@
 
                         <form action="{{ route('products.store') }}" method="post">
                             {{ csrf_field() }}
+
+                            <div class="form-group{{ $errors->has('Manufacturer') ? ' has-error' : '' }}">
+                                <label for="manufacturer_id" class="control-label">Manufacturer:</label>
+                                    <select id="manufacturer_id" name="manufacturer_id" class="form-control">
+                                        @foreach ($manufacturers as $manufacturer)
+                                            <option value="{{ $manufacturer->id }}">{{ $manufacturer->name }} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                             <div class="form-group">
                                 <label for="productName">Name:</label>
-                                <input type="text" class="form-control" id="productName" placeholder="Product name">
+                                <input type="text" name="productName" class="form-control" id="productName" placeholder="Product name">
                             </div>
                             <div class="form-group">
                                 <label for="productDescription">Description:</label>
