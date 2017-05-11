@@ -17,7 +17,8 @@
             <div class="row">
                 @forelse($products as $product)
                     <div class="product">
-                        {{--<img data-src="holder.js/100px280/thumb" alt="Card image cap">--}}
+                        <h3>{{ $product->manufacturer->name }}</h3>
+                        <hr>
                         <h4>{{ $product->productName }}</h4>
                         <p class="card-text">{{ $product->productDescription }}</p>
                         @can('create', \App\Manufacturer::class)
