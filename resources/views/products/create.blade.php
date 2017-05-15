@@ -10,13 +10,7 @@
 
                     <div class="panel-body">
 
-                        @if ($errors->count() > 0)
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                        @include('layouts.errors')
 
                         <form action="{{ route('products.store') }}" method="post">
                             {{ csrf_field() }}
