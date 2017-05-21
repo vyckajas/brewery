@@ -32,6 +32,12 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ route('shoppingCart') }}">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
+                        <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                    </a>
+                </li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Login</a></li>
@@ -43,6 +49,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ route('profile') }}">User Orders</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

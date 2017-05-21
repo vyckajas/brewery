@@ -16,6 +16,8 @@
     {{--Font Awesome CDN--}}
     <script src="https://use.fontawesome.com/b812279261.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([

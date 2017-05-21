@@ -36,7 +36,8 @@
                         @foreach($post->comments as $comment)
                             <li class="list-group-item">
                                 <strong>
-                                    {{ $comment->created_at->diffForHumans() }}: &nbsp;
+                                    {{ $comment->created_at->diffForHumans() }}
+                                    <em>by {{ $comment->user->name }} :&nbsp;</em>
                                 </strong>
                                 {{ $comment->body }}
                             </li>
@@ -52,7 +53,7 @@
 
                             <div class="form-group">
                                 <textarea class="form-control" name="body" id="body"
-                                          placeholder="Your comment here"></textarea>
+                                          placeholder="Your comment here" required></textarea>
                             </div>
 
                             <div class="form-group">

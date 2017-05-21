@@ -12,7 +12,8 @@
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "monarobase/country-list": "^2.0",
-        "webpatser/laravel-countries": "dev-master"
+        "webpatser/laravel-countries": "dev-master",
+        "stripe/stripe-php": "4.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

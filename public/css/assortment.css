@@ -57,6 +57,9 @@ body {
 
 .card-text {
     font-size: 85%;
+    /*overflow: hidden;*/
+    height: 60px;
+    overflow-x: scroll;
 }
 
 footer {

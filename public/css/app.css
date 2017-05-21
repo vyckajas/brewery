@@ -24,3 +24,19 @@
 .gapFromNav{
     margin-top: 65px;
 }
+.product{
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.product .thumbnail{
+    border:none;
+    background: #FFFFFF;
+}
+.price{
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+}
+.thumbnail img {
+    max-height: 150px;
+}

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Socialite;
 use App\User;
+use Session;
 
 class LoginController extends Controller
 {
@@ -28,6 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/home';
 
     /**
@@ -71,6 +73,11 @@ class LoginController extends Controller
 
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
+        if (Session::has('oldUrl')) {
+            $oldUrl = Session::get('oldUrl');
+            Session::forget('oldUrl');
+            return redirect()->to($oldUrl);
+        }
         return redirect($this->redirectTo);
     }
 
@@ -88,8 +95,8 @@ class LoginController extends Controller
             return $authUser;
         }
         return User::create([
-            'name'     => $user->name,
-            'email'    => $user->email,
+            'name' => $user->name,
+            'email' => $user->email,
             'provider' => $provider,
             'provider_id' => $user->id
         ]);
