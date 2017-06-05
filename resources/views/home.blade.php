@@ -13,8 +13,7 @@
             <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
                 etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
             <p>
-                <a href="#" class="btn btn-primary">Reservation for degustation</a>
-                <a href="#" class="btn btn-secondary">Menu</a>
+                <a href="{{ url('/events') }}" class="btn btn-primary">Reservation for degustation</a>
             </p>
         </div>
     </section>

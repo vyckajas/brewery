@@ -23,11 +23,10 @@
                 @endif
                 <li><a href="/manufacturers">Manufacturers</a></li>
                 <li><a href="/products">Products</a></li>
-                @can('create', \App\Manufacturer::class)
-                    <li><a href="#">Reservation for degustation</a></li>
-                @endcan
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Contact Us</a></li>
+                    @if (Auth::check())
+                    <li><a href="{{ url('/events') }}">Reservation for degustation</a></li>
+                    @endif
+                <li><a href="{{ url('contacts') }}">Contact Us</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

@@ -21,9 +21,15 @@
                         <strong>
                             Total Price: {{ $order->cart->totalPrice }} €
                         </strong>
+                        <strong class="pull-right">
+                            Order ID: &nbsp; {{ $order->id }}
+                        </strong>
                     </div>
                 </div>
             @endforeach
+            <strong class="list-group-item">
+                User ID: &nbsp; {{ $order->user_id }}
+            </strong>
         </div>
     </div>
 @endsection

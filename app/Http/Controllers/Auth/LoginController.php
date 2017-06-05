@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Socialite;
 use App\User;
 use Session;
+use App\Mail\Welcome;
 
 class LoginController extends Controller
 {
@@ -70,14 +71,14 @@ class LoginController extends Controller
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
-
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
-        if (Session::has('oldUrl')) {
-            $oldUrl = Session::get('oldUrl');
-            Session::forget('oldUrl');
-            return redirect()->to($oldUrl);
-        }
+//        if (Session::has('oldUrl')) {
+//            $oldUrl = Session::get('oldUrl');
+//            Session::forget('oldUrl');
+//            return redirect()->to($oldUrl);
+//        }
+
         return redirect($this->redirectTo);
     }
 
@@ -91,6 +92,7 @@ class LoginController extends Controller
     public function findOrCreateUser($user, $provider)
     {
         $authUser = User::where('provider_id', $user->id)->first();
+        \Mail::to($user)->send(new Welcome);
         if ($authUser) {
             return $authUser;
         }

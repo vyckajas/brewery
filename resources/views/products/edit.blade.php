@@ -42,11 +42,21 @@
                                           style="margin: 0px; width: 100%; height: 50px;">{{ $product->productDescription }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label class="custom-file">
-                                    <input type="file" id="file" class="custom-file-input">
-                                    <span class="custom-file-control"></span>
-                                </label>
+                                <label for="price">Price:</label>
+                                <input type="number" name="price" class="form-control" id="price"
+                                       placeholder="Product price" value="{{ $product->price }}" required>
                             </div>
+                            <div class="form-group">
+                                <label for="imagePath">Image URL</label>
+                                <input id="imagePath" name="imagePath" type="text" placeholder="Image URL"
+                                       class="form-control" value="{{ $product->imagePath }}" required>
+                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<label class="custom-file">--}}
+                                    {{--<input type="file" id="file" class="custom-file-input">--}}
+                                    {{--<span class="custom-file-control"></span>--}}
+                                {{--</label>--}}
+                            {{--</div>--}}
 
                             <input type="submit" value='Submit' class="btn btn-primary"/>
                         </form>

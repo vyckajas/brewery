@@ -36,18 +36,15 @@
                             @can('create', \App\Manufacturer::class)
                                 <hr>
                                 <a href="{{ route('products.edit', $product->id) }}"
-                                   class="btn btn-default">Edit</a>
+                                   class="btn btn-default btn-xs">Edit</a>
                                 <form action="{{ route('products.destroy', $product->id) }}"
                                       method="POST"
                                       style="display: inline;"
                                       onsubmit="return confirm('Are you sure?');">
                                     <input type="hidden" name="_method" value="DELETE">
                                     {{ csrf_field() }}
-                                    <button class="btn btn-danger">Delete</button>
+                                    <button class="btn btn-danger btn-xs">Delete</button>
                                 </form>
-                                <label class="control-label">Select picture</label>
-                                <input id="input-2" name="input2[]" type="file" class="file" multiple
-                                       data-show-upload="false" data-show-caption="true">
                                 <hr>
 
                             @endcan

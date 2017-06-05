@@ -7,7 +7,7 @@
                 <ul class="list-group">
                     @foreach($products as $product)
                         <li class="list-group-item">
-                            <span class="badge">{{ $product['qty'] }}</span>
+                            <span class="badge">Quantity: &nbsp;{{ $product['qty'] }}</span>
                             <strong>{{ $product['item']['productName'] }}</strong>
                             <span class="label label-success">{{ $product['price'] }} €</span>
                             <div class="btn-group">
