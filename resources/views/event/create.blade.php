@@ -2,12 +2,11 @@
 
 @section('content')
 
-
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h2 style="text-align: center">Create a New Reservation</h2>
             <a style="vertical-align: text-top; margin-left: 20px; margin-top: 2px; display: inline-block"
-            href="{{ url('/events') }}" class="btn btn-default">All Reservation's List</a>
+               href="{{ url('/events') }}" class="btn btn-default">All Reservation's List</a>
             <hr>
         </div>
     </div>

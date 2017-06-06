@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Manufacturer;
-use Illuminate\Http\Request;
 use App\Http\Requests\StoreManufacturerRequest;
 
 class ManufacturersController extends Controller
@@ -43,16 +42,14 @@ class ManufacturersController extends Controller
         return redirect()->route('manufacturers.index')->with(['message' => 'Manufacturer added successfully']);
     }
 
-
     /**
      * Display the specified resource.
      *
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
         return view('manufacturers.index');
     }
 

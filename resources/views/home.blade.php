@@ -1,11 +1,6 @@
 @extends('layouts.master')
-
 @section('content')
-
     @include('layouts.productsHead')
-
-
-
 
     <section class="jumbotron text-center">
         <div class="container">
@@ -26,9 +21,9 @@
                 <hr>
             @endcan
 
-                @if (session('message'))
-                    <div class="alert alert-info">{{ session('message') }}</div>
-                @endif
+            @if (session('message'))
+                <div class="alert alert-info">{{ session('message') }}</div>
+            @endif
 
             <div class="row">
                 @foreach($posts as $post)

@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 
     <div class="row">
@@ -9,7 +8,7 @@
                 <div class="col-md-12 ">
                     <h2 style="text-align: center">Edit Your Reservation</h2>
                     <a style="vertical-align: text-top; margin-left: 20px; margin-top: 2px; display: inline-block"
-                    href="{{ url('/events') }}" class="btn btn-default">All Reservation's List</a>
+                       href="{{ url('/events') }}" class="btn btn-default">All Reservation's List</a>
                     <a style="vertical-align: text-top; margin-left: 20px; margin-top: 2px; display: inline-block"
                        href="{{ url('/events') }}/create" class="btn btn-primary">Add New Reservation</a>
                     <hr>

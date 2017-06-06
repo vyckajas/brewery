@@ -7,8 +7,6 @@
 
     <title>BeerBrewery</title>
 
-
-
     <!-- Custom styles for this template -->
     <link href="css/assortment.css" rel="stylesheet">
 </head>

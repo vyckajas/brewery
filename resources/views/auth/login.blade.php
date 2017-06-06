@@ -64,7 +64,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
-                                        <p>Don't have an account? <a href="{{ route('register') }}"> Register instead!</a>
+                                        <p>Don't have an account? <a href="{{ route('register') }}"> Register
+                                                instead!</a>
                                         </p>
                                     </div>
                                 </div>

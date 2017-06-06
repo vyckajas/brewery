@@ -2,9 +2,7 @@
 
 namespace App\Policies;
 
-use App\Product;
 use App\User;
-use App\Manufacturer;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ManufacturerPolicy
@@ -14,7 +12,7 @@ class ManufacturerPolicy
     /**
      * Determine whether the user can create manufacturers.
      *
-     * @param  \App\User  $user
+     * @param  \App\User $user
      * @return mixed
      */
     public function create(User $user)
@@ -25,8 +23,8 @@ class ManufacturerPolicy
     /**
      * Determine whether the user can update the manufacturer.
      *
-     * @param  \App\User  $user
-     * @param  \App\Manufacturer  $manufacturer
+     * @param  \App\User $user
+     * @param  \App\Manufacturer $manufacturer
      * @return mixed
      */
     public function update(User $user)
@@ -37,8 +35,8 @@ class ManufacturerPolicy
     /**
      * Determine whether the user can delete the manufacturer.
      *
-     * @param  \App\User  $user
-     * @param  \App\Manufacturer  $manufacturer
+     * @param  \App\User $user
+     * @param  \App\Manufacturer $manufacturer
      * @return mixed
      */
     public function delete(User $user)

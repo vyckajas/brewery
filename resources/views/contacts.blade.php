@@ -7,9 +7,12 @@
                 <h1>Contacts</h1>
                 <address>
                     <ul>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;<a href="tel:+37060012345">+370 600 12345</a></li>
-                        <li><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;<a href="mailto:office@example.com">office@example.com</a></li>
-                        <li><i class="fa fa-home" aria-hidden="true"></i> &nbsp;<a href="https://goo.gl/maps/rWwPYYjw7fC2">Taikos g. 101, Vilnius</a></li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;<a href="tel:+37060012345">+370 600
+                                12345</a></li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;<a href="mailto:office@example.com">office@example
+                                .com</a></li>
+                        <li><i class="fa fa-home" aria-hidden="true"></i> &nbsp;<a
+                                    href="https://goo.gl/maps/rWwPYYjw7fC2">Taikos g. 101, Vilnius</a></li>
                     </ul>
                 </address>
                 <p>

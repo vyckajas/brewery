@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -51,12 +50,6 @@
                                 <input id="imagePath" name="imagePath" type="text" placeholder="Image URL"
                                        class="form-control" value="{{ $product->imagePath }}" required>
                             </div>
-                            {{--<div class="form-group">--}}
-                                {{--<label class="custom-file">--}}
-                                    {{--<input type="file" id="file" class="custom-file-input">--}}
-                                    {{--<span class="custom-file-control"></span>--}}
-                                {{--</label>--}}
-                            {{--</div>--}}
 
                             <input type="submit" value='Submit' class="btn btn-primary"/>
                         </form>

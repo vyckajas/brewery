@@ -8,10 +8,9 @@ use App\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Cart;
-use App\User;
-use App\Mail\Welcome;
-//use App\Mail\Ordered;
-use Stripe\{Stripe, Charge, Customer};
+use Stripe\{
+    Stripe, Charge, Customer
+};
 
 class CartController extends Controller
 {
@@ -21,11 +20,7 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
-
         $request->session()->put('cart', $cart);
-//        dd($request->session()->get('cart')->totalQty);
-//        return redirect()->route('products.index');
-//        return view('products.index', compact('cart'));
         return redirect()->back();
     }
 
@@ -34,7 +29,7 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->reduceByOne($id);
-        if(count($cart->items) > 0){
+        if (count($cart->items) > 0) {
             Session::put('cart', $cart);
         } else {
             Session::forget('cart');
@@ -47,15 +42,12 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->removeItem($id);
-
-        if(count($cart->items) > 0){
+        if (count($cart->items) > 0) {
             Session::put('cart', $cart);
         } else {
             Session::forget('cart');
         }
-
         return redirect()->route('shoppingCart');
-
     }
 
     public function getCart()
@@ -86,14 +78,11 @@ class CartController extends Controller
         }
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
-
         Stripe::setApiKey(config('services.stripe.secret'));
-
         $customer = Customer::create(array(
             'email' => request('stripeEmail'),
-            'source'  => request('stripeToken')
+            'source' => request('stripeToken')
         ));
-
         try {
             $charge = Charge::create(array(
                 "customer" => $customer->id,
@@ -106,26 +95,22 @@ class CartController extends Controller
             $order->address = $request->input('address');
             $order->name = $request->input('name');
             $order->payment_id = $charge->id;
-
             Auth::user()->orders()->save($order);
-        }
-        catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->route('checkout')->with('error', $e->getMessage());
-
         }
         Session::forget('cart');
-//        \Mail::to($order)->send(new Ordered);
         return redirect()->route('products.index', compact('order'))->with('success', 'Successfully purchased products!');
     }
-    public function getProfile(){
+
+    public function getProfile()
+    {
         $products = Product::all();
         $orders = Auth::user()->orders;
-        $orders->transform(function ($order){
+        $orders->transform(function ($order) {
             $order->cart = unserialize($order->cart);
             return $order;
         });
-//        $user = User::all();
-//        \Mail::to($user)->send(new Welcome);
         return view('layouts/profile', compact('orders', 'products'));
     }
 }

@@ -2,11 +2,9 @@
 
 namespace App\Mail;
 
-use App\Event;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class Reservation extends Mailable
 {
@@ -21,7 +19,7 @@ class Reservation extends Mailable
      */
     public function __construct($ivykis)
     {
-        $this->ivykis=$ivykis;
+        $this->ivykis = $ivykis;
     }
 
     /**
@@ -33,9 +31,9 @@ class Reservation extends Mailable
     {
         return $this->view('emails.reservation')->with([
             'reservationName' => $this->ivykis->name,
-            'page_title' 	=> $this->ivykis->title,
-            'startTime'			=> $this->ivykis->start_time,
-            'endTime'			=> $this->ivykis->end_time,
-            ]);
+            'page_title' => $this->ivykis->title,
+            'startTime' => $this->ivykis->start_time,
+            'endTime' => $this->ivykis->end_time,
+        ]);
     }
 }

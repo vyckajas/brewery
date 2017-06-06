@@ -23,9 +23,9 @@
                 @endif
                 <li><a href="/manufacturers">Manufacturers</a></li>
                 <li><a href="/products">Products</a></li>
-                    @if (Auth::check())
+                @if (Auth::check())
                     <li><a href="{{ url('/events') }}">Reservation for degustation</a></li>
-                    @endif
+                @endif
                 <li><a href="{{ url('contacts') }}">Contact Us</a></li>
             </ul>
 

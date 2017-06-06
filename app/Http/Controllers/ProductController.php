@@ -4,14 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Manufacturer;
 use App\Product;
-use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-//use Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
-
 
 class ProductController extends Controller
 {
@@ -47,14 +40,8 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         Product::create($request->all());
-//        request()->file('file')->store('products');
-//        $file = request()->file('file');
-//        $ext = $file->guessClientExtension();
-//        $file->storeAs('products/' , auth()->id() , "product.{$ext}");
-
         return redirect()->route('products.index')->with(['message' => 'Product added successfully']);
     }
-
 
     /**
      * Display the specified resource.
@@ -93,7 +80,6 @@ class ProductController extends Controller
         $product->update($request->all());
         return redirect()->route('products.index')->with(['message' => 'Product updated successfully']);
     }
-
 
     /**
      * Remove the specified resource from storage.
